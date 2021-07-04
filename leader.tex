@@ -27,7 +27,8 @@
 \definecolor{faction}{RGB}{000,111,222}
 \newcommand\leaderStrength{1}
 \newcommand\leaderName{Leader-Name}
-\newcommand\leaderArt{example-image}
+%\newcommand\leaderArt{example-image}
+\newcommand\leaderArt{./source/Tleilaxu-75,0,130/Zoal-X.jpg}
 
 \contourlength{1.6pt}
 \contournumber{500}
@@ -41,8 +42,8 @@
 
     % Draw illustration
     \node[rectangle,anchor=center] at 
-      (current page.center)
-      {\includegraphics[width=\paperwidth,height=\paperwidth]{\leaderArt}};
+      ([yshift=1mm]current page.center)
+      {\includegraphics[width=0.8\paperwidth,height=0.8\paperwidth]{\leaderArt}};
   \end{scope}
 
   \path[decorate, decoration={text along path,
