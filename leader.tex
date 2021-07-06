@@ -35,9 +35,10 @@
 
 \begin{tikzpicture}[overlay, remember picture]
 
-  % Solid background
+  % Colored circle
   \fill[faction] (current page.center) circle (\paperwidth/2);
   \begin{scope}
+    % Clipping the circle in which the art will be
     \path[clip] ([yshift=1mm]current page.center) circle (\paperwidth/2.6);
 
     % Draw illustration
@@ -46,16 +47,19 @@
       {\includegraphics[width=0.8\paperwidth,height=0.8\paperwidth]{\leaderArt}};
   \end{scope}
 
+  % Leader name
   \path[decorate, decoration={text along path,
       text=|\fontsize{0.5cm}{1.8cm}\selectfont\ttfamily\color{white}|\leaderName, text
     align={align=center, left indent=6.28cm}}] (current page.center)
     circle (\paperwidth/2.08);
   
+  % Leader strength
   \node[] at ([xshift=-5mm]current page.east)
     {\contour{faction}{%
       \fontsize{0.9cm}{1.8cm}\selectfont\sffamily\color{white}\leaderStrength}
     };
 
+  % Faction symbol
   \node at ([yshift=8mm]current page.south)
     {\includegraphics[width=7mm,height=7mm]{\factionArt}};
 \end{tikzpicture}
