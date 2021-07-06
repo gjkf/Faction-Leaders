@@ -28,6 +28,7 @@
 \newcommand\leaderStrength{1}
 \newcommand\leaderName{Leader-Name}
 \newcommand\leaderArt{example-image}
+\newcommand\factionArt{example-image}
 
 \contourlength{1.6pt}
 \contournumber{500}
@@ -49,11 +50,14 @@
       text=|\fontsize{0.5cm}{1.8cm}\selectfont\ttfamily\color{white}|\leaderName, text
     align={align=center, left indent=6.28cm}}] (current page.center)
     circle (\paperwidth/2.08);
+  
   \node[] at ([xshift=-5mm]current page.east)
     {\contour{faction}{%
       \fontsize{0.9cm}{1.8cm}\selectfont\sffamily\color{white}\leaderStrength}
     };
 
+  \node at ([yshift=8mm]current page.south)
+    {\includegraphics[width=7mm,height=7mm]{\factionArt}};
 \end{tikzpicture}
 
 \end{document}
